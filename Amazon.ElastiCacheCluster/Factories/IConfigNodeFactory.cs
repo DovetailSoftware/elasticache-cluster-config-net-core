@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 
-using System.Net;
 using Enyim.Caching.Configuration;
 using Enyim.Caching.Memcached;
 using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace Amazon.ElastiCacheCluster.Factories
 {
@@ -32,6 +32,6 @@ namespace Amazon.ElastiCacheCluster.Factories
         /// <param name="config"></param>
         /// <param name="loggerFactory"></param>
         /// <returns></returns>
-        IMemcachedNode CreateNode(EndPoint endpoint, ISocketPoolConfiguration config, ILoggerFactory loggerFactory);
+        IMemcachedNode CreateNode(DnsEndPoint endpoint, ISocketPoolConfiguration config, ILoggerFactory loggerFactory);
     }
 }

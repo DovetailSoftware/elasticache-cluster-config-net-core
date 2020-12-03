@@ -73,7 +73,7 @@ namespace LocalSimulationTests
             return "TestingAWSInternal";
         }
 
-        public Task<bool> ExecuteAsync(IOperation op, Action<bool> next)
+        public bool ExecuteAsync(IOperation op, Action<bool> next)
         {
             throw new NotImplementedException();
         }

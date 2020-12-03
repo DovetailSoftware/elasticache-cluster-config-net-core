@@ -12,15 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
 using Amazon.ElastiCacheCluster.Factories;
 using Enyim.Caching.Configuration;
 using Enyim.Caching.Memcached;
 using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace LocalSimulationTests
 {
@@ -33,7 +29,7 @@ namespace LocalSimulationTests
             this.node = new TestNode();
         }
 
-        public IMemcachedNode CreateNode(EndPoint endpoint, ISocketPoolConfiguration config, ILoggerFactory loggerFactory)
+        public IMemcachedNode CreateNode(DnsEndPoint endpoint, ISocketPoolConfiguration config, ILoggerFactory loggerFactory)
         {
             node.EndPoint = endpoint;
             return node;

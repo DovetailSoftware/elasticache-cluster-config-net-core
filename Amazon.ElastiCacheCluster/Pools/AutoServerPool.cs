@@ -298,7 +298,7 @@ namespace Amazon.ElastiCacheCluster.Pools
         /// Used to update the servers for Auto discovery
         /// </summary>
         /// <param name="endPoints">The connections to all the cluster nodes</param>
-        public void UpdateLocator(List<EndPoint> endPoints)
+        public void UpdateLocator(List<DnsEndPoint> endPoints)
         {
             var newLocator = _configuration.CreateNodeLocator();
 

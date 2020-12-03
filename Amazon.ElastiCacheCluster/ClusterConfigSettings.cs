@@ -17,7 +17,6 @@
  */
 
 using System;
-using System.ComponentModel.DataAnnotations;
 using Amazon.ElastiCacheCluster.Factories;
 using Enyim.Caching.Configuration;
 using Enyim.Caching.Memcached;
@@ -67,7 +66,6 @@ namespace Amazon.ElastiCacheCluster
         /// <summary>
         /// Class containing information about the cluster host and port
         /// </summary>
-        [Required]
         public Endpoint ClusterEndPoint { get; set; }
 
         /// <summary>
@@ -88,13 +86,11 @@ namespace Amazon.ElastiCacheCluster
             /// <summary>
             /// The hostname of the cluster containing ".cfg."
             /// </summary>
-            [Required]
             public string HostName { get; set; }
 
             /// <summary>
             /// The port of the endpoint
             /// </summary>
-            [Required]
             public int Port { get; set; }
         }
 

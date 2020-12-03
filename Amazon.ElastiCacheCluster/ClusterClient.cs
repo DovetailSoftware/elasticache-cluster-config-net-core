@@ -14,7 +14,6 @@
  */
 
 using Enyim.Caching;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Amazon.ElastiCacheCluster
@@ -37,24 +36,6 @@ namespace Amazon.ElastiCacheCluster
             return new MemcachedClient(loggerFactory, new ElastiCacheClusterConfig(loggerFactory, endpoint, port));
         }
         
-        /// <summary>
-        /// Creates a MemcachedClient using the Client config provided
-        /// </summary>
-        /// <param name="loggerFactory">The factory to create the each class'es logger</param>
-        /// <param name="config">The config to instantiate the client with</param>
-        /// <param name="section">A section in config that has a endpoint field</param>
-        /// <returns>A new MemcachedClient configured for auto discovery</returns>
-        public static MemcachedClient CreateClient(ILoggerFactory loggerFactory, IConfiguration config, string section = null)
-        {
-            var settings = new ClusterConfigSettings();
-            if (!string.IsNullOrEmpty(section))
-            {
-                config = config.GetSection(section);
-            }
-            config.Bind(settings);
-            return new MemcachedClient(loggerFactory, new ElastiCacheClusterConfig(loggerFactory, settings));
-        }
-
         /// <summary>
         /// Creates a MemcachedClient using the Client config provided
         /// </summary>

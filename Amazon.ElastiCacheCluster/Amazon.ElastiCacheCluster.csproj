@@ -12,7 +12,12 @@
     <DocumentationFile>bin\Release\Amazon.ElastiCacheCluster.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EnyimMemcachedCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EnyimMemcachedCore">
+      <HintPath>..\..\..\..\..\..\git\blue\agent\source\packages\EnyimMemcachedCore\netstandard2.0\EnyimMemcachedCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
